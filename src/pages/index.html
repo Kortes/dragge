@@ -1,0 +1,23 @@
+{% extends "base/base.njk" %}
+
+{% block title %}{{ page.title }}{% endblock %}
+
+{% block header %}
+	{{ super() }}
+	{% include 'main-filter/main-filter.njk' %}
+{% endblock %}
+
+{% block content %}
+	<div class="map" id="map"></div>
+	<div class="page__wrapper clearfix">
+		{% include 'aside/aside.njk' %}
+		<div class="page__main">
+			{% include 'list/list.njk' %}
+			{% include 'loader/loader.njk' %}
+		</div>
+	</div>
+{% endblock %}
+
+{% block script %}
+	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+{% endblock %}

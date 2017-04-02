@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="21px" viewBox="0 0 22 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>Star 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M20.8936807,191.664576 C20.4001145,191.405093 19.5999727,191.405047 19.1063193,191.664576 L15.3313748,193.649182 C14.8378086,193.908665 14.5140925,193.67358 14.6083719,193.123889 L15.3293222,188.920427 C15.4235849,188.370833 15.1763711,187.609838 14.7769971,187.220545 L11.7230029,184.243636 C11.3236994,183.854412 11.4472441,183.473894 11.9991654,183.393696 L16.2196817,182.780419 C16.7715055,182.700234 17.4188607,182.229959 17.6656874,181.729834 L19.5531597,177.905397 C19.7999428,177.40536 20.2000137,177.405272 20.4468403,177.905397 L22.3343126,181.729834 C22.5810957,182.229871 23.2283971,182.70022 23.7803183,182.780419 L28.0008346,183.393696 C28.5526584,183.47388 28.6763711,183.854343 28.2769971,184.243636 L25.2230029,187.220545 C24.8236994,187.60977 24.5763984,188.370736 24.6706778,188.920427 L25.3916281,193.123889 C25.4858908,193.673483 25.1622786,193.90871 24.6686252,193.649182 L20.8936807,191.664576 Z" id="favorite-path"></path>
+        <mask id="favorit-mask" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="-2" y="-2" width="21.0225296" height="20.2244621">
+            <rect x="9.48873663" y="175.530336" width="21.0225296" height="20.2244621" fill="white"></rect>
+            <use xlink:href="#favorite-path" fill="black"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+        <g id="main" transform="translate(-46.000000, -922.000000)" stroke="#FFFFFF" stroke-width="4">
+            <g id="Group-9-Copy" transform="translate(37.000000, 747.000000)">
+                <use id="Star-2" mask="url(#favorit-mask)" xlink:href="#favorite-path"></use>
+            </g>
+        </g>
+    </g>
+</svg>

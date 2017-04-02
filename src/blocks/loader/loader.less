@@ -1,0 +1,30 @@
+@import "../base/var";
+
+@keyframes rotate {
+  from {
+  	transform: rotate(0);
+  }
+  to {
+  	transform: rotate(360deg);
+  }
+}
+
+.loader{
+	white-space: nowrap;
+	font: 17px/17px 'Chevin', Arial, sans-serif;
+	color: lighten(@c-grey, 19%);
+
+	&__icon{
+		vertical-align: middle;
+		display: inline-block;
+		width: 45px;
+		height: 45px;
+		animation: rotate .75s infinite linear;
+	}
+
+	&__text{
+		vertical-align: middle;
+		display: inline-block;
+		margin-left: 5px;
+	}
+}

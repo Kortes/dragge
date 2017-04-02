@@ -1,0 +1,18 @@
+{% set info = {
+	"description": "Первая специализированная площадка для сдачи и съёма жилья в Екатеринбурге.",
+	"column1": "<b>80% объявлений — от собственников жилья</b><br>или — обявления агентов, чья комиссия уже оплачена собственником. И не более 20% — от агентов, которые берут комиссию с арендатора",
+	"column2": "<b>Только проверенные объявления по аренде</b><br>Мы сами прозваниваем объявления. Но если кто-то всё же вдруг нарушает <a href='#'>правила сайта</a> или&nbsp;публикует недостоверную информацию - <a href='#feedback'>пишите нам</a>!"
+}%}
+
+<div class="info">
+	<div class="info__column">
+		<a href="/build/" class="info__logo">
+			<svg class="logo" width="204" height="60">
+				<use xlink:href="#icon-logo"></use>
+			</svg>
+		</a>
+		<div class="info__description">{{ info.description }}</div>
+	</div>
+	<div class="info__column">{{ info.column1 }}</div>
+	<div class="info__column">{{ info.column2 }}</div>
+</div>

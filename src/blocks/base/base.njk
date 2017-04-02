@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+    {% block head %}
+      <link rel="stylesheet" href="css/main.css" />
+      <title>{% block title %}{% endblock %} - dragee</title>
+      <meta charset='utf-8'>
+      <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+      <meta name="description" content=""/>
+      <meta name="keywords" content=""/>
+      <meta name="copyright" content="(c)"> 
+      <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, maximum-scale=1.0"/>
+      <meta http-equiv="cleartype" content="on"/>
+      <meta name="format-detection" content="telephone=no"/>
+      <meta name="format-detection" content="address=no"/>
+      <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+      <link rel="shortcut icon" href="../images/favicon.png" type="image/png">
+      <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+      <!-- saved from url=(0014)about:internet -->
+    {% endblock %}
+</head>
+<body class="page">
+    <div class="page__inner">
+      {% block header %}
+        {% include 'header/header.njk' %}
+      {% endblock %}
+      <div class="page__content">
+        {% block content %}{% endblock %}
+      </div>
+      {% block footer %}
+        {% include 'footer/footer.njk' %}
+      {% endblock %}
+    </div>
+    {% block fancybox %}
+      <div class="fancybox">
+        {% include 'fancybox/fancybox.njk' %}
+      </div>
+    {% endblock %}
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="../vendor/fancybox/fancybox.js"></script>
+    <script src="../vendor/customCarousel/customCarousel.js"></script>
+    <script src="../vendor/customSelect/jquery.mousewheel.js"></script>
+    <script src="../vendor/customSelect/mwheelIntent.js"></script>
+    <script src="../vendor/customSelect/jquery.jscrollpane.min.js"></script>
+    <script src="../vendor/customSelect/jquery.customSelect.js"></script>
+    {% block script %}{% endblock %}
+    <script src='js/main.js'></script>
+</body>
+</html>

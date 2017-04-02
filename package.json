@@ -1,0 +1,21 @@
+{
+  "devDependencies": {
+    "browser-sync": "^2.10.0",
+    "gulp": "~3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-cheerio": "^0.6.2",
+    "gulp-csso": "^2.0.0",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-less": "^3.0.5",
+    "gulp-load-plugins": "^1.1.0",
+    "gulp-nunjucks-html": "^2.0.0",
+    "gulp-replace": "^0.5.4",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-svg-symbols": "^2.0.2",
+    "gulp-svgstore": "^6.1.0",
+    "gulp-uglify": "~0.2.1",
+    "gulp-watch": "^4.3.5",
+    "rimraf": "^2.4.4"
+  }
+}

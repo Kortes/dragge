@@ -1,0 +1,41 @@
+@import "../base/var";
+
+.statistic{
+	margin: 50px 0;
+	display: flex;
+	justify-content: space-between;
+
+	&__item{
+		position: relative;
+		width: 165px;
+		min-height: 90px;
+		border-radius: 8px;
+		background: linear-gradient(to bottom, @c-gr-top 0%, @c-gr-bottom 100%);
+	}
+
+	&__wrapper{
+		position: absolute;
+		top:1px;
+		bottom: 1px;
+		left: 1px;
+		right: 1px;
+		border-radius: 6px;
+		background: @c-white;
+		text-align: center;
+		padding: 10px 15px;
+		line-height: 17px;
+		color: @c-text-light;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	&__count{
+		color: @c-blue;
+		font-size: 28px;
+		font-weight: 300;
+		line-height: 1;
+		margin-bottom: 3px;
+	}
+
+}

@@ -1,0 +1,20 @@
+{% set aside = {
+	"vk": "<!-- VK Widget --><script type='text/javascript' src='//vk.com/js/api/openapi.js?142'></script><div id='vk_groups'></div><script type='text/javascript'>VK.Widgets.Group('vk_groups', {mode: 0, width: '230', height: '350', color1: 'FFFFFF', color2: '2B587A', color3: '5B7FA6'}, 45655286);</script>",
+	"flamp": "<a class='flamp-widget' href='https://ekaterinburg.flamp.ru/firm/drazhe_sajjt_obyavlenijj_po_arende_nedvizhimosti-70000001020641309'  data-flamp-widget-type='big' data-flamp-widget-count='2' data-flamp-widget-orientation='portrait' data-flamp-widget-id='70000001020641309'>Отзывы о нас на Флампе</a><script>!function(d,s){var js,fjs=d.getElementsByTagName(s)[0];js=d.createElement(s);js.async=1;js.src='//widget.flamp.ru/loader.js';fjs.parentNode.insertBefore(js,fjs);}(document,'script');</script>",
+	"seo": {
+		"title": "Сервис поиска жилья Драже",
+		"text": "<p>Если вы хотите снять квартиру или комнату в Екатеринбурге - то вы попали по адресу. У нас каждый день публикуется до 200 объявлений по аренде жилья от собственников, либо без агентских комиссий за заселение.</p><p>Сайт “Драже” по аренде жилья - это один из самых посещаемых ресурсов данной тематики в Екатеринбурге.</p><p>Мы не оказываем услуг по аренде жилья, мы создаем пространство, в котором могут цивиллизованно взаимодействовать друг с другом собственники, арендаторы и реэлторы.</p><p>В 2012 году мы приняли решение и взяли на себя ответственность за рынок аренды жилья в нашем городе. За столь короткое время удалось создать проект, аналогов которому нет в других городах России. </p><p>Надеемся, наш пример будет заразителен :)</p>"
+	}
+} %}
+
+<div class="aside">
+	{% if aside.vk %}
+		<div class="aside__block">{{ aside.vk }}</div>
+	{% endif %}
+	{% if aside.flamp %}
+		<div class="aside__block">{{ aside.flamp }}</div>
+	{% endif %}
+	
+	<h1 class="aside__title">{{ aside.seo.title }}</h1>
+	<div class="aside__text">{{ aside.seo.text }}</div>
+</div>

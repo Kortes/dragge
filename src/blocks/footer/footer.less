@@ -1,0 +1,108 @@
+@import "../base/var";
+
+.footer{
+	background-color: @c-dark-bg;
+	background-image: url(../../images/darkPattern.jpg);
+	background-position: top center;
+	background-size: 65px 65px;
+	padding: 40px 50px;
+	color: @c-white;
+
+	&__right{
+		float: right;
+		width: 125px;
+	}
+
+	&__left{
+		float: left;
+		width: 200px;
+	}
+
+	&__content{
+		padding: 10px 175px 0 250px;
+	}
+
+	&__logo{
+		width: 170px;
+		height: 50px;
+		display: inline-block;
+	}
+
+	&__info{
+		position: relative;
+		padding: 0 0 60px 30px;
+	}
+
+	&__counter{
+		height: 30px;
+		position: absolute;
+		bottom: 0;
+		left: 30px;
+	}
+
+	&__description{
+		font: 14px/17px 'Chevin', Arial, sans-serif;
+		padding: 5px 0 30px;
+		color: fade(@c-white, 60%);
+	}
+
+	&__add{
+		color: @c-white;
+		line-height: 16px;
+
+		.btn__icon{
+			width: 15px;
+		}
+	}
+
+	&__getlogo{
+		padding-top: 90px;
+		display: inline-block;
+		color: @c-white;
+		text-decoration: none;
+		font-size: 12px;
+
+		svg{
+			display: block;
+		}
+
+		span{
+			color: @c-getlogo;
+		}
+	}
+
+	&__text{
+		padding-top: 35px;
+		font-size: 12px;
+		line-height: 19px;
+	}
+
+	&__feedback{
+		vertical-align: top;
+		margin-left: 10px;
+
+		.btn__icon{
+			width: 18px;
+		}
+	}
+
+	&__links{
+		padding-top: 25px;
+	}
+
+	&__sotial{
+		display: inline-block;
+		vertical-align: top;
+		font-size: 0;
+
+		&-item{
+			display: inline-block;
+			vertical-align: top;
+			margin-right: 25px;
+		}
+
+		&-link{
+			display: block;
+		}
+	}
+}

@@ -1,0 +1,220 @@
+@import "../base/var";
+
+.list{
+	&__head{
+		overflow: hidden;
+		margin-bottom: 35px;
+	}
+
+	&__form{
+		float:right;
+		margin-left: 15px;
+	}
+
+	&__title{
+		font-size: 21px;
+		font-weight: 500;
+		color: @c-title;
+		padding-top: 2px;
+	}
+
+	&__favorites{
+		position: absolute;
+		bottom: 10px;
+		left: 10px;
+		z-index: 1;
+		display: none;
+
+		&-input{
+			display: none;
+
+			&:checked + label{
+				opacity: 1;
+			}
+		}
+
+		&-label{
+			display: block;
+			width: 22px;
+			height: 21px;
+			opacity: 0.6;
+			cursor:pointer;
+		}
+	}
+
+	&__item{
+		margin-bottom: 40px;
+		position: relative;
+		height: 206px;
+
+		&:hover{
+			.list__favorites{
+				display: block;
+			}
+
+			.list__item-count{
+				display: block;
+			}
+
+			.list__item-preview:after{
+				content: "";
+				position: absolute;
+				height: 55px;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				border-radius: 0 0 12px 12px;
+				background: linear-gradient(to bottom, transparent 0%, @c-black 100%);
+				opacity: 0.3;
+			}
+		}
+
+		&-link,
+		&-link-body{
+			display: block;
+			text-decoration: none;
+			color: @c-black;
+		}
+
+		&-link{
+			float:left;
+			width: 344px;
+			margin-right: 20px;
+		}
+
+		&-preview{
+			position: relative;
+			display: block;
+			float:left;
+			width: 344px;
+			height: 206px;
+		}
+
+		&-image{
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			margin: auto;
+			width: auto;
+			height: auto;
+			max-width: 344px;
+			max-height: 206px;
+			border-radius: 12px;
+		}
+
+		&-body{
+			display: block;
+			overflow: hidden;
+		}
+
+		&-agent{
+			font-size: 12px;
+			color: @c-text-light;
+		}
+
+		&-agent-info{
+			display: flex;
+			line-height: 1;
+		}
+
+		&-messagers{
+			flex: 0 0 auto;
+			font-size: 0;
+		}
+
+		&-verified{
+			padding-right: 5px;
+		}
+
+		&-name{
+			line-height: 20px;
+		}
+
+		&-messager{
+			display: inline-block;
+			vertical-align: top;
+			margin-left: 10px;
+
+			&-link{
+				display: block;
+			}
+		}
+
+		&-phone{
+			display: inline-block;
+			vertical-align: middle;
+			margin-right: 20px;
+			font-size: 18px;
+		}
+
+		&-number{
+			display: inline-block;
+			vertical-align: middle;
+			font-size: 12px;
+			color: @c-blue;
+		}
+
+		&-line{
+			display: flex;
+			justify-content: space-between;
+			line-height: 1.4;
+		}
+
+		&-address{
+			font-size: 18px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			margin-right: 10px;
+		}
+
+		&-price{
+			font-size: 18px;
+			font-weight: 500;
+			white-space: nowrap;
+		}
+
+		&-info,
+		&-communal{
+			font-size: 12px;
+			color: @c-text-light;
+		}
+
+		&-description{
+			background: @c-bg-light;
+			border-radius: 8px;
+			padding: 5px 10px;
+			display: block;
+			line-height: 20px;
+			margin: 10px 0;
+			max-height: 60px;
+			overflow: hidden;
+		}
+
+		&-count{
+			position: absolute;
+			bottom: 10px;
+			right: 10px;
+			color: @c-white;
+			display: none;
+			text-shadow: 0 1px 2px fade(@c-black, 70%);
+			z-index: 1;
+		}
+
+		&-time{
+			display: inline-block;
+			position: absolute;
+			left: 50%;
+			bottom: 12px;
+			background: @c-white;
+			border-radius: 27px;
+			padding: 0 10px;
+			font-size: 12px;
+			transform: translateX(-50%);
+			color: fade(@c-black, 57%);
+			z-index: 1;
+		}
+	}
+}

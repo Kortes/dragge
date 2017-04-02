@@ -1,0 +1,17 @@
+{% set stat = [
+	{"count": "19 457", "text": "Посещаемость сайта"},
+	{"count": "25 457", "text": "Посещаемость старницы VK"},
+	{"count": "2 874", "text": "Объявлений от&nbsp;собственников"},
+	{"count": "874", "text": "Объявлений без&nbsp;комиссии"}
+]%}
+
+<ul class="statistic">
+	{% for item in stat %}
+		<li class="statistic__item">
+			<div class="statistic__wrapper">
+				<div class="statistic__count">{{ item.count }}</div>
+				<div class="statistic__text">{{ item.text }}</div>
+			</div>
+		</li>
+	{% endfor %}
+</ul>
