@@ -1,1 +1,63 @@
-fancybox
+<div id="fancy-add" class="fancybox__wrapper">
+	<a href="javascript:;" onclick="$.fancybox.close();" class="fancybox__close">
+		<svg width="12" height="12">
+			<use xlink:href="#icon-delete"></use>
+		</svg>
+	</a>
+	add
+</div>
+
+{% set area = [
+	{"name": "currentArea", "text": "Автовокзал", "checked": true},
+	{"name": "currentArea", "text": "Академический"},
+	{"name": "currentArea", "text": "Ботанический"},
+	{"name": "currentArea", "text": "ВИЗ", "checked": true},
+	{"name": "currentArea", "text": "Вокзальный"},
+	{"name": "currentArea", "text": "Втузгородок"},
+	{"name": "currentArea", "text": "Елизавет"},
+	{"name": "currentArea", "text": "ЖБИ"},
+	{"name": "currentArea", "text": "Заречный"},
+	{"name": "currentArea", "text": "Кольцово"},
+	{"name": "currentArea", "text": "Компрессорный"},
+	{"name": "currentArea", "text": "Новая сортировка"},
+	{"name": "currentArea", "text": "Парковый"},
+	{"name": "currentArea", "text": "Пионерский"},
+	{"name": "currentArea", "text": "Сибирский тракт"},
+	{"name": "currentArea", "text": "Синие камни"},
+	{"name": "currentArea", "text": "Старая сортировка"},
+	{"name": "currentArea", "text": "Уктус"},
+	{"name": "currentArea", "text": "УНЦ"},
+	{"name": "currentArea", "text": "Уралмаш"},
+	{"name": "currentArea", "text": "Химмаш"},
+	{"name": "currentArea", "text": "Центр", "checked": true},
+	{"name": "currentArea", "text": "Шарташ"},
+	{"name": "currentArea", "text": "Шарташский рынок"},
+	{"name": "currentArea", "text": "Широкая речка"},
+	{"name": "currentArea", "text": "Эльмаш"},
+	{"name": "currentArea", "text": "Юго - Западный", "checked": true},
+	{"name": "currentArea", "text": "Пригород"}
+]%}
+
+<div id="fancy-area" class="fancybox__wrapper fancybox_area">
+	<a href="javascript:;" onclick="$.fancybox.close();" class="fancybox__close">
+		<svg width="12" height="12">
+			<use xlink:href="#icon-delete"></use>
+		</svg>
+	</a>
+	<div class="fancybox__columns">
+		{% set countInCell = (area | length / 5) | round %}
+		{% for cell in area | batch(countInCell) %}
+			{% set index = loop.index %}
+			<div class="fancybox__cell">
+				{% for item in cell %}
+					<div class="fancybox__line">
+						<div class="form__checkbox">
+							<input type="checkbox" name="{{ item.name }}" id="{{ item.name }}{{ index }}{{ loop.index }}" value={{ item.text }} {% if item.checked %}checked{% endif %} />
+							<label class="form__checkbox-label fancybox__checkbox" for="{{ item.name }}{{ index }}{{ loop.index }}">{{ item.text }}</label>
+						</div>
+			       	</div>
+			    {% endfor %}
+		    </div>
+		{% endfor %}
+	</div>
+</div>

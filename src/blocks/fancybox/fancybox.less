@@ -2,4 +2,46 @@
 
 .fancybox{
 	display: none;
+
+	&__close{
+		display: block;
+		position: absolute;
+		top: 30px;
+		right: 30px;
+	}
+
+	&__wrapper{
+		box-shadow: 0 2px 14px fade(@c-black, 22%);
+		min-width: 500px;
+		min-height: 200px;
+		border-radius: 12px;
+		background: @c-white;
+		padding: 25px 50px 25px 35px;
+		box-sizing: border-box;
+	}
+
+	&__columns{
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__cell{
+		flex: 1 1 200px;
+	}
+
+	&__checkbox{
+		padding: 1px 12px;
+		margin: 5px 0;
+		border: none;
+	}
+
+	&-skin{
+		box-shadow: none !important;
+		border-radius: 0 !important;
+		background: none !important;
+	}
+
+	&_area{
+		width: 1024px;
+	}
 }

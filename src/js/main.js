@@ -12,6 +12,12 @@ $(document).ready(function() {
 		}
 	});
 
+	$(".fancybox-link").fancybox({
+		padding: 0,
+        closeBtn: false,
+        fitToView: false
+	});
+
 	$("a.disabled").click(function(e){
 		e.preventDefault();
 	});
@@ -99,6 +105,38 @@ $(document).ready(function() {
 		self.removeClass("disabled");
 		$(".main-filter__or").hide();
 	});
+
+	//area count(пока не делаю глубокую логику)
+	var areaArray = $(".fancybox__columns").find("input[type='checkbox']");
+
+	function countCheckedArea(areas) {
+		var countChecked = 0;
+
+		areas.each(function(i) {
+			if (areas.eq(i).prop("checked")) {
+				countChecked += 1;
+			}
+		});
+
+		return countChecked;
+	}
+
+	function addCountArea(){
+		var countChecked = countCheckedArea(areaArray);
+		if (countChecked > 0){
+			$(".main-filter__area").addClass("main-filter__area_active");
+			$(".main-filter__area-count").html(countChecked);
+		} else {
+			$(".main-filter__area").removeClass("main-filter__area_active");
+			$(".main-filter__area-count").html("");
+		}
+	}
+	addCountArea();
+
+	areaArray.click(function(){
+		addCountArea();
+	});
+	//----
 
 	if ($("#map").length > 0){
 		ymaps.ready(init);

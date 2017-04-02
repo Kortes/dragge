@@ -134,11 +134,13 @@
 		text-decoration: none;
 		margin-right: 15px;
 
-		&-active{
+		&-active,
+		&_active &-default{
 			display: none;
 		}
 
-		&-default{
+		&-default,
+		&_active &-active{
 			display: block;
 		}
 

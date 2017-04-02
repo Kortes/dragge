@@ -115,7 +115,8 @@ input{
 	}
 }
 
-.form__radio{
+.form__radio,
+.form__checkbox{
 	display: inline-block;
 
 	input{
@@ -143,22 +144,22 @@ input{
 
 	&-group{
 		font-size: 0;
+	}
 
-		.form__radio-label{
-			border-left: none;
-			border-right: none;
-			border-radius: 0;
-		}
+	&-group &-label{
+		border-left: none;
+		border-right: none;
+		border-radius: 0;
+	}
 
-		.form__radio:first-child .form__radio-label{
-			border-radius: 8px 0 0 8px;
-			border-left: 1px solid @c-border;
-		}
+	&-group &:first-child &-label{
+		border-radius: 8px 0 0 8px;
+		border-left: 1px solid @c-border;
+	}
 
-		.form__radio:last-child .form__radio-label{
-			border-radius: 0 8px 8px 0;
-			border-right: 1px solid @c-border;
-		}
+	&-group &:last-child &-label{
+		border-radius: 0 8px 8px 0;
+		border-right: 1px solid @c-border;
 	}
 }
 
