@@ -1,35 +1,8 @@
-{%set filter = {
-	"term": [
-		{"value": "short", "text": "короткий срок"},
-		{"value": "long", "text": "длительный срок", "checked": true}
-	],
-	"city": [
-		{"value": "ekb", "text": "в Екатеринбурге", "checked": true},
-		{"value": "ber", "text": "в Березовском"}
-	],
-	"accommodation": [
-		{"value": "all", "text": "Любое"},
-		{"value": "apartment", "text": "Квартира", "checked": true},
-		{"value": "room", "text": "Комната"},
-		{"value": "house", "text": "Дом"},
-		{"value": "bed", "text": "Койко-место"}
-	],
-	"countRoom": [
-		{"value": "Студия", "text": "Студия"},
-		{"value": "1", "text": "1 - комнатная", "checked": true},
-		{"value": "2", "text": "2 - комнатная", "checked": true},
-		{"value": "3", "text": "3 - комнатная"},
-		{"value": "4+", "text": "4+ - комнатная"}
-	],
-	"isolated": [
-		{"value": "1", "text": "1 изолированная комната"},
-		{"value": "2", "text": "2 изолированные комнаты"},
-		{"value": "3", "text": "3 изолированные комнаты"},
-		{"value": "4+", "text": "4+ изолированных комнат"}
-	],
+{% set filter = {
 	"startPrice": 14000,
 	"finishPrice": 21000
 }%}
+
 <form class="main-filter" action="#" method="get">
 	<div class="main-filter__header clearfix">
 		<div class="main-filter__toggle">
@@ -37,65 +10,13 @@
 			<a href="#" class="main-filter__toggle-link main-filter__toggle-link_normal">Обычный поиск</a>
 		</div>
 		<div class="main-filter__head">
-			Найти жилье на
-			<select class="select-text" name="term">
-				{% for item in filter.term %}
-					<option value="{{ item.value }}" {% if item.checked %}selected{% endif %}>{{ item.text }}</option>
-				{% endfor %}
-			</select>
-			<select class="select-text" name="city">
-				{% for item in filter.city %}
-					<option value="{{ item.value }}" {% if item.checked %}selected{% endif %}>{{ item.text }}</option>
-				{% endfor %}
-			</select>
+			{% set filterTitle = "Найти жилье на" %}
+			{% include 'filter/head-filter.njk' %}
 		</div>
 	</div>
 	<div class="main-filter__body">
 		<div class="main-filter__body-top">
-			<div class="form__radio-group main-filter__accommodation">
-				{% for item in filter.accommodation %}
-					<div class="form__radio">
-						<input type="radio" name="accommodation" id="accommodation{{ loop.index }}" value={{ item.value }} {% if item.checked %}checked{% endif %} />
-						<label class="form__radio-label" for="accommodation{{ loop.index }}">{{ item.text }}</label>
-					</div>
-				{% endfor %}
-			</div>
-			<div class="select-checkbox main-filter__select-checkbox">
-				<div class="select-checkbox__title">
-					<span>
-						{% set index = 0 %}
-						{% set selectTitle = '' %}
-						{% set countable = false %}
-						{% for item in filter.countRoom %}
-							{% if item.checked %}
-								{% set index = index + 1 %}
-								{% if index > 1 %}
-									{% set selectTitle = selectTitle + ', '%}
-								{% endif %}
-								{% set selectTitle = selectTitle + item.value %}
-								{% if item.value != "Студия" %}
-									{% set countable = true %}
-								{% endif %}
-							{% endif %}
-						{% endfor %}
-						{{ selectTitle }}
-						{% if countable %} - комнатная {% endif %}
-					</span>
-				</div>
-				<div class="select-checkbox__popup">
-					{% for item in filter.countRoom %}
-						<div class="select-checkbox__line">
-							<input type="checkbox" name="countRoom" id="countRoom{{ loop.index }}" value="{{ item.value }}" {% if item.checked %}checked{% endif %} />
-							<label class="select-checkbox__label" for="countRoom{{ loop.index }}">{{ item.text }}</label>
-						</div>
-					{% endfor %}
-				</div>
-			</div>
-			<select class="select main-filter__select" name="isolated">
-				{% for item in filter.isolated %}
-					<option value="{{ item.value }}" {% if item.checked %}selected{% endif %}>{{ item.text }}</option>
-				{% endfor %}
-			</select>
+			{% include 'filter/base-filter.njk' %}
 			<div class="main-filter__whitespace">
 				<div class="main-filter__input">
 					<input type="text" class="inp" placeholder="10000" value="{{ filter.startPrice }}" />

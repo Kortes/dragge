@@ -1,0 +1,115 @@
+{% set add = {
+	"floor": [1,2,3,4,5,6,7,8,9],
+	"info": [
+		{ "title": "Микрорайон", "value": "Пионерский"}, 
+		{ "title": "Этажность", "value": "12 этажей"}, 
+		{ "title": "Материал", "value": "Кирпич"}, 
+		{ "title": "Год постройки", "value": "1986"}
+	},
+	"tip": "Добавьте вид из окна.<br>Некоторым людям<br>это важно.",
+	"tip_desc": "Опишите ваш объект<br>максимально полно<br>и коротко",
+	"description": "Хороший ремонт, мебель, есть вся необходимая бытовая техника (микроволновка, холодильник, посудомоечная машина, духовой шкаф, варочная поверхность, вытяжной шкаф, стиральная машина, водонагревательный бак, телевизор), балкон, 2 санузла, большая прихожая",
+	"tip_contact": "Что-то там совет про<br>симку. Или типа того."
+}%}
+
+<form action="#" method="post" class="form-add page__container">
+	<div class="main-filter__head main-filter__padding">
+		{% set filterTitle = "Сдать жилье на" %}
+		{% include 'filter/head-filter.njk' %}
+	</div>
+	<div class="form-add__filter">
+		{% include 'filter/base-filter.njk' %}
+	</div>
+	<div class="form-add__group">
+		<div class="form-add__title">Информация о доме</div>
+		<div class="form-add__content">
+			<div class="form-add__cell form-add__cell_350">
+				<label class="form-add__label">Улица</label>
+				<input type="text" class="inp inp_autocomplite form-add__address" />
+			</div>
+			<div class="form-add__cell form-add__cell_60">
+				<label class="form-add__label">Этаж</label>
+				<select class="select form-add__floor" name="floor">
+					{% for item in add.floor %}
+						<option value="{{ item }}" {% if loop.last %}selected{% endif %}>{{ item }}</option>
+					{% endfor %}
+				</select>
+			</div>
+			<div class="form-add__cell form-add__info">
+				{% for item in add.info %}
+					<div class="form-add__info-item">
+						<div class="form-add__info-title">{{ item.title }}</div>
+						<div class="form-add__info-value">{{ item.value }}</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+	<div class="form-add__group">
+		<div class="form-add__title">Подробности квартиры</div>
+		<div class="form-add__content">
+			<div class="form-add__cell form-add__cell_90">
+				<label class="form-add__label">Площадь<br>квартиры, м2</label>
+				<input type="text" class="inp" />
+			</div>
+			<div class="form-add__cell form-add__cell_90 form-add__cell_separator">
+				<label class="form-add__label">Кухня, м2</label>
+				<input type="text" class="inp" />
+			</div>
+			<div class="form-add__cell form-add__cell_90 form-add__cell_separator">
+				<label class="form-add__label">Жилая, м2</label>
+				<input type="text" class="inp" />
+			</div>
+			<div class="form-add__cell">
+				<label class="form-add__label">Изолированных<br>комнат</label>
+				<select class="select form-add__room" name="room">
+					{% for item in [0, 1, 2, 3] %}
+						<option value="{{ item }}" {% if loop.first %}selected{% endif %}>{{ item }}</option>
+					{% endfor %}
+				</select>
+			</div>
+			<div class="form-add__cell">
+				<label class="form-add__label">Санузел</label>
+				<select class="select form-add__bathroom" name="bathroom">
+					<option value="separated" selected>Раздельный</option>
+					<option value="combined">Совмещенный</option>
+				</select>
+			</div>
+			<div class="form-add__cell">
+				<select class="select form-add__bathroom" name="bathroom">
+					<option value="unglazed" selected>Неостекленный балкон</option>
+					<option value="glazed">Остекленный балкон</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	<div class="form-add__group">
+		<div class="form-add__title form-add__title_less_padding">Загрузите фотографии</div>
+		<div class="form-add__content">
+			{% set tip = add.tip %}
+			{% include 'dropzone/dropzone.njk' %}
+		</div>
+	</div>
+	<div class="form-add__group">
+		<div class="form-add__title">Общее описание</div>
+		<div class="form-add__content">
+			{% set tip = add.tip_desc %}
+			{% set description = add.description %}
+			{% include 'description/description.njk' %}
+		</div>
+	</div>
+	<div class="form-add__group">
+		<div class="form-add__title">Арендная плата</div>
+		<div class="form-add__content">
+			{% include 'rent/rent.njk' %}
+			<a href="#" class="form-add__entry btn btn_gradient">ВОЙТИ НА САЙТ</a>
+		</div>
+	</div>
+	<div class="form-add__group">
+		<div class="form-add__title">Ваши контактные данные</div>
+		<div class="form-add__content">
+			{% set tip = add.tip_contact %}
+			{% include 'contact/contact.njk' %}
+		</div>
+	</div>
+</form>

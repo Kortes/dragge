@@ -158,6 +158,127 @@ $(document).ready(function() {
 	        myMap.geoObjects.add(myPlacemark);
 	    }
 	}
+
+	var arrowAddress = [//просто пример данных
+		{
+			"type": "ул.", 
+			"name": "Согласования", 
+			"specific": "Екатеринбург, Сверловская обл.",
+			"value": "ул. Согласования"
+		},
+		{	
+			"type": "ул.", 
+			"name": "Совелова", 
+			"specific": "Екатеринбург, Сверловская обл.",
+			"value": "ул. Совелова"
+		},
+		{
+			"type": "ул.", 
+			"name": "Советская", 
+			"specific": "Екатеринбург, Сверловская обл.",
+			"value": "ул. Советская"
+		},
+		{
+			"type": "пер.", 
+			"name": "Совхозный", 
+			"specific": "Екатеринбург, Сверловская обл.",
+			"value": "пер. Совхозный"
+		}
+	]
+
+	$(".inp_autocomplite").autocomplete({// https://jqueryui.com/autocomplete/
+      	source: arrowAddress,
+      	minLength: 0
+    }).autocomplete("instance")._renderItem = function( ul, item ) {
+      	return $("<li>")
+	        .append("<div>" + item.type + 
+	        	" <span class='inp__address'>" + 
+	        		item.name + 
+	    		"</span><span class='inp__specific'>, " + item.specific + "</span></div>" )
+	        .appendTo( ul );
+    };
+
+    $(".form-add__address").change(function(){
+    	$(".form-add__info").addClass("form-add__info_active");
+    });
+
+    $(".dropzone").dropzone({ 
+    	url: "../images/dropzone",
+    	maxFilesize: 1,
+    	maxFiles: 10,
+    	thumbnailWidth: 240,
+    	thumbnailHeight: 160,
+    	previewTemplate: $("#dropzoneTamplate").html()
+    });
+
+    $(".dropzone").on("click", ".room__value", function(e){
+    	e.preventDefault();
+    	var self = $(this);
+    	var parent = self.closest(".room");
+    	self.slideUp(200);
+    	parent.find(".room__body").slideDown(200);
+    });
+
+    $(".dropzone").on("click", ".room__link", function(e){
+    	e.preventDefault();
+    	var self = $(this);
+    	var parent = self.closest(".room");
+    	parent.find(".room__value").text(self.text()).slideDown(200);
+    	parent.find(".room__body").slideUp(200);
+    });
+
+    $(".dropzone").on("click", ".room__add", function(e){
+    	e.preventDefault();
+    	var self = $(this);
+    	var parent = self.closest(".room");
+    	var inp = parent.find(".room__input");
+    	parent.find(".room__value").text(inp.val()).slideDown(200);
+    	parent.find(".room__body").slideUp(200);
+    });
+
+    $(".tip__delete").click(function(e){
+    	e.preventDefault();
+    	$(this).closest(".tip").fadeOut(200);
+    });
+
+    function descriptionLength(){
+    	$(".description__count").text($(".description__text").val().length);
+    }
+
+    descriptionLength();
+    $(".description__text").keyup(function(){
+    	descriptionLength();
+    });
+
+    $("#MyStatus").change(function() {
+    	if ($(this).prop("checked")) {
+    		$(".rent__check_commision").show(200);
+    	} else {
+    		$(".rent__check_commision").hide(200);
+    	}
+    });
+
+    $(".social__link").click(function(e){
+    	e.preventDefault();
+    	$(this).closest(".social__item").toggleClass("social__item_open");
+    });
+
+    $(".social__ok").click(function(e){
+    	e.preventDefault();
+    	var parent = $(this).closest(".social__item");
+    	var inp = parent.find(".social__input");
+    	if (inp.val() != ""){
+    		parent.toggleClass("social__item_open").addClass("social__item_active");
+    	}
+    });
+
+    $(".social__delete").click(function(e){
+    	e.preventDefault();
+    	var parent = $(this).closest(".social__item");
+    	var inp = parent.find(".social__input");
+    	inp.val("");
+    	parent.removeClass("social__item_active");
+    });
 });
 
 ;( function( window, document )

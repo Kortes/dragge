@@ -1,0 +1,119 @@
+@import "../base/var";
+
+.form-add{
+	&__group{
+		padding: 30px 0 35px;
+		border-bottom: 1px solid @c-border;
+		position: relative;
+
+		&:last-child{
+			border: none;
+			padding-bottom: 70px;
+		}
+	}
+
+	&__title{
+		font-size: 18px;
+		font-weight: 500;
+		color: @c-title;
+		padding-bottom: 25px;
+
+		&_less_padding{
+			padding-bottom: 0;
+		}
+	}
+
+	&__cell{
+		display: inline-block;
+		vertical-align: bottom;
+		margin-left: 15px;
+		position: relative;
+
+		&:first-child{
+			margin-left: 0;
+		}
+
+		&_60{
+			width: 60px;
+		}
+
+		&_90{
+			width: 90px;
+		}
+
+		&_135{
+			width: 135px;
+		}
+
+		&_190{
+			width: 190px;
+		}
+
+		&_245{
+			width: 245px;
+		}
+
+		&_350{
+			width: 350px;
+		}
+
+		&_separator:before{
+			content: "/";
+			position: absolute;
+			left: -10px;
+			bottom: 5px;
+			line-height: 30px;
+			color: @c-border;
+		}
+	}
+
+	&__label{
+		display: block;
+		font-size: 12px;
+		opacity: 0.5;
+		padding: 0 5px;
+	}
+
+	&__floor{
+		width: 60px;
+	}
+
+	&__info{
+		width: 620px;
+		color: @c-text;
+		display: none;
+
+		&_active{
+			display: inline-block;
+		}
+
+		&-item{
+			display: inline-block;
+			vertical-align: top;
+			margin-left: 30px;
+
+			&:first-child{
+				margin-left: 15px;
+			}
+		}
+
+		&-title{
+			color: fade(@c-black, 50%);
+			font-size: 12px;
+		}
+	}
+
+	&__room{
+		width: 100px;
+	}
+
+	&__entry{
+		position: absolute;
+		left: 50%;
+		top: 100%;
+		transform: translate(-50%, -50%);
+		text-transform: uppercase;
+		line-height: 30px;
+		padding: 5px 20px;
+	}
+}

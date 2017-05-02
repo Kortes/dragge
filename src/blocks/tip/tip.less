@@ -1,0 +1,81 @@
+@import "../base/var";
+
+.tip{
+	width: 240px;
+	height: 160px;
+	margin: 25px 10px;
+	border: 1px solid @c-purpur;
+	border-radius: 10px;
+	overflow: hidden;
+	position: relative;
+	padding: 10px 15px;
+	box-sizing: border-box;
+	color: @c-text;
+	box-shadow: 0 1px 5px fade(@c-hover, 40%);
+	order: 1000;
+
+	&__delete{
+		position: absolute;
+		width: 20px;
+		height: 20px;
+		z-index: 1;
+		top: 10px;
+		right: 10px;
+		background: linear-gradient(to bottom, @c-gr-top 0%, @c-gr-bottom 100%);
+		border-radius: 10px;
+
+		&:before,
+		&:after{
+			content: "";
+			position: absolute;
+			left: 4px;
+			right: 4px;
+			top: 50%;
+			height: 2px;
+			background: @c-white;
+			margin-top: -1px;
+		}
+
+		&:before{
+			transform: rotate(-45deg);
+		}
+
+		&:after{
+			transform: rotate(-135deg);
+		}
+	}
+
+	&__title{
+		font-size: 12px;
+		color: @c-disabled;
+	}
+
+	&__body{
+		margin: 5px 0;
+		height: 80px;
+		font-weight: 500;
+		overflow: hidden;
+	}
+
+	&__bottom{
+		font-size: 12px;
+	}
+
+	&__hide{
+		color: @c-disabled;
+		text-decoration: none;
+		float: right;
+
+		&:hover{
+			text-decoration: underline;
+		}
+	}
+
+	&__next{
+		text-decoration: none;
+
+		&:hover{
+			text-decoration: underline;
+		}
+	}
+}

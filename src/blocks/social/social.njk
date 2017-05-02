@@ -1,0 +1,20 @@
+{% set social = [
+	{"type": "fb"},
+	{"type": "vk", "link": "vk.com/46346345"},
+	{"type": "ok"}
+]%}
+
+<div class="social">
+	{% for item in social -%}
+		<div class="social__item {% if item.link %} social__item_active {% endif %}">
+			<a href="#" class="social__link">
+				<svg width="25" height="25">
+					<use xlink:href="#icon-{{ item.type }}"></use>
+				</svg>
+			</a>
+			<input type="text" class="social__input" value="{{ item.link }}" />
+			<a href="#" class="social__ok"></a>
+			<a href="#" class="social__delete"></a>
+		</div>
+	{%- endfor %}
+</div>

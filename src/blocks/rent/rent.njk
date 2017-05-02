@@ -1,0 +1,47 @@
+<div class="rent">
+	<div class="rent__check">
+		<input type="checkbox" class="checkbox rent__checkbox" id="MyStatus" />
+		<label for="MyStatus" class="rent__label">Я — риэлтор!</label>
+	</div>
+	<div class="rent__check">
+		<input type="checkbox" class="checkbox rent__checkbox" id="MyRent"/>
+		<label for="MyRent" class="rent__label">Арендная плата</label>
+		<div class="rent__inner">
+			<label class="rent__text">
+				Оплата за месяц
+				<input type="text" class="inp" />
+			</label>
+		</div>
+	</div>
+	<div class="rent__check">
+		<input type="checkbox" class="checkbox rent__checkbox" id="MyCommunal" />
+		<label for="MyCommunal" class="rent__label">Коммунальные отдельно</label>
+		<div class="rent__inner">
+			<label class="rent__text">
+				Платежи летом
+				<input type="text" class="inp" />
+			</label>
+			<label class="rent__text">
+				Платежи зимой
+				<input type="text" class="inp" />
+			</label>
+		</div>
+	</div>
+	<div class="rent__check rent__check_commision">
+		<input type="checkbox" class="checkbox rent__checkbox" id="MyCommission" />
+		<label for="MyCommission" class="rent__label">Агентское вознаграждение</label>
+		<div class="rent__inner">
+			<label class="rent__text rent__text_autosize">
+				За чей счет<br>
+				<select class="select">
+					<option value="owner">Собственника</option>
+					<option value="agent">Агента</option>
+				</select>
+			</label>
+			<label class="rent__text">
+				Сумма
+				<input type="text" class="inp" />
+			</label>
+		</div>
+	</div>
+</div>

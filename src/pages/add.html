@@ -1,0 +1,12 @@
+{% extends "base/base.njk" %}
+
+{% block title %}Добавить объявление{% endblock %}
+
+{% block content %}
+	{% include 'form/form-add.njk' %}
+{% endblock %}
+
+{% block script %}
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="../vendor/dropzone/dropzone.js"></script>
+{% endblock %}

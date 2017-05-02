@@ -1,0 +1,22 @@
+{% set room = ["Прихожая","Гостинная","Кухня","Ванная","Таулет","Кладовка","Балкон"]%}
+
+<div class="room">
+	<a href="#" class="room__value"><span>{{ room | first }}</span></a>
+	<div class="room__body">
+		<div class="room__new">
+			<input type="text" class="inp room__input" placeholder="Другое" />
+			<a href="#" class="room__add">
+				<svg width="18" height="18">
+					<use xlink:href="#icon-plus"></use>
+				</svg>
+			</a>
+		</div>
+		<ul class="room__list">
+			{% for item in room %}
+				<li class="room__item">
+					<a href="#" class="room__link">{{ item }}</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+</div>

@@ -1,0 +1,36 @@
+<div class="dropzone">
+	<div class="dz-message" data-dz-message>
+		<span class="dropzone__icon">
+			<svg width="17" height="17">
+				<use xlink:href="#icon-plus"></use>
+			</svg>
+		</span>
+		<span class="dropzone__text">Загрузите фото</span>
+		<span class="dropzone__info">или просто перетяните<br>их сюда из папки</span>
+		<span class="dropzone__description">до 10 штук, не более 1 Мб. каждая</span>
+	</div>
+	{% include 'tip/tip.njk' %}
+</div>
+
+<div class="dropzone__hide" id="dropzoneTamplate">
+	<div class="dz-preview dz-file-preview">
+	    <a href="#" class="dropzone__delete"></a>
+		<label class="dropzone__radio">
+		  	<input type="radio" name="main" class="dropzone__radio-input" />
+		  	<span class="dropzone__radio-block">
+		  		<span class="dropzone__radio-control"></span>
+		  		<span class="dropzone__radio-text">Главное фото</span>
+		  	</span>
+		</label>
+	  	<div class="dropzone__body">
+		  <div class="dz-details">
+		    <img data-dz-thumbnail />
+		  	<div class="dz-error-message"><span data-dz-errormessage></span></div>
+		  </div>
+		  <div class="dropzone__status">
+			  <div class="dz-progress"><span class="dz-upload" data-dz-uploadprogress></span></div>
+		  </div>
+		  {% include 'room/room.njk' %}
+		</div>
+	</div>
+</div>

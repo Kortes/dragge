@@ -1,0 +1,60 @@
+{% set contact = {
+	"name": "Сафрон Нахимов",
+	"phone": "+7 912 0 444 707",
+	"mail": "safro.nakh@gmail.com"
+}%}
+
+<div class="contact">
+	<div class="contact__form">
+		<div class="contact__form-body">
+			<div class="form-add__cell form-add__cell_190">
+				<label class="form-add__label">Пожалуйста, представьтесь</label>
+				<input type="text" class="inp" value="{{contact.name}}"/>
+			</div>
+			<div class="form-add__cell form-add__cell_135">
+				<label class="form-add__label">Ваш телефон</label>
+				<input type="text" class="inp" value="{{contact.phone}}" />
+			</div>
+			<div class="form-add__cell form-add__cell_245">
+				<label class="form-add__label">Ваш Email</label>
+				<input type="text" class="inp" value="{{contact.mail}}" />
+			</div>
+		</div>
+		<div class="contact__communications">
+			<div class="checkbox contact__checkbox">
+				<input type="checkbox" id="telegramCommunications" />
+				<label for="telegramCommunications">Telegram</label>
+			</div>
+			<div class="checkbox contact__checkbox">
+				<input type="checkbox" id="viberCommunications" />
+				<label for="viberCommunications">Viber</label>
+			</div>
+			<div class="checkbox contact__checkbox">
+				<input type="checkbox" id="whatsappCommunications" />
+				<label for="whatsappCommunications">WhatsApp</label>
+			</div>
+			<div class="contact__social">{% include 'social/social.njk' %}</div>
+		</div>
+		{% include 'tip/tip.njk' %}
+		<div class="contact__button">
+			<a href="#" class="btn btn_gradient btn_large disabled">Опубликовать</a>
+		</div>
+	</div>
+	<div class="contact__vk">
+		<span class="contact__vk-icon">
+			<svg width="55" height="55">
+				<use xlink:href="#icon-vk"></use>
+			</svg>
+		</span>
+		<div class="contact__vk-body">
+			<div class="contact__vk-text">
+				Укажите номер своей личной связи VK, чтобы помочь нам быстрее проверить и&nbsp;разместить ваше объявление
+			</div>
+			<div class="contact__vk-form">
+				<input type="text" class="inp" />
+				<a href="#" class="btn btn_gradient">Сохранить</a>
+			</div>
+			<div class="contact__vk-desc">Этот адрес не увидит никто</div>
+		</div>
+	</div>
+</div>

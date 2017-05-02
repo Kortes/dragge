@@ -2,7 +2,6 @@
 <html lang="ru-RU">
 <head>
     {% block head %}
-      <link rel="stylesheet" href="css/main.css" />
       <title>{% block title %}{% endblock %} - dragee</title>
       <meta charset='utf-8'>
       <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -17,6 +16,7 @@
       <link rel="shortcut icon" href="../images/favicon.png" type="image/png">
       <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
       <!-- saved from url=(0014)about:internet -->
+      <link rel="stylesheet" href="css/main.css" />
     {% endblock %}
 </head>
 <body class="page">
@@ -36,11 +36,11 @@
         {% include 'fancybox/fancybox.njk' %}
       </div>
     {% endblock %}
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="../vendor/fancybox/fancybox.js"></script>
     <script src="../vendor/customCarousel/customCarousel.js"></script>
-    <script src="../vendor/customSelect/jquery.mousewheel.js"></script>
-    <script src="../vendor/customSelect/mwheelIntent.js"></script>
+    <!-- script src="../vendor/customSelect/jquery.mousewheel.js"></script>
+    <script src="../vendor/customSelect/mwheelIntent.js"></script -->
     <script src="../vendor/customSelect/jquery.jscrollpane.min.js"></script>
     <script src="../vendor/customSelect/jquery.customSelect.js"></script>
     {% block script %}{% endblock %}

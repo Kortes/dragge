@@ -1,0 +1,22 @@
+{%set filter = {
+	"term": [
+		{"value": "short", "text": "короткий срок"},
+		{"value": "long", "text": "длительный срок", "checked": true}
+	],
+	"city": [
+		{"value": "ekb", "text": "в Екатеринбурге", "checked": true},
+		{"value": "ber", "text": "в Березовском"}
+	]
+}%}
+
+{{ filterTitle }}
+<select class="select-text" name="term">
+	{% for item in filter.term %}
+		<option value="{{ item.value }}" {% if item.checked %}selected{% endif %}>{{ item.text }}</option>
+	{% endfor %}
+</select>
+<select class="select-text" name="city">
+	{% for item in filter.city %}
+		<option value="{{ item.value }}" {% if item.checked %}selected{% endif %}>{{ item.text }}</option>
+	{% endfor %}
+</select>

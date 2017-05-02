@@ -1,0 +1,87 @@
+@import "../base/var";
+
+.room{
+
+	&__body{
+		display: none;
+		position: relative;
+		padding-top: 10px;
+
+		&:before{
+			content: "";
+			position: absolute;
+			pointer-events: none;
+			top: 50%;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background: linear-gradient(to bottom, fade(@c-white, 0%) 0%, fade(@c-white, 70%) 100%);
+		}
+	}
+
+	&__value{
+		display: block;
+		color: @c-text;
+		text-decoration: none;
+		padding: 5px 25px 5px 5px;
+		position: relative;	
+		margin: 5px 10px;
+
+		span{
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+
+		&:before{
+			content: "";
+			position: absolute;
+			display: none;
+			right: 5px;
+			top: 14px;
+			border-top: 5px solid @c-grey;
+			border-left: 4px solid transparent;
+			border-right: 4px solid transparent;
+		}
+	}
+
+	&__input[type="text"]{
+		padding: 2px 30px 2px 10px;
+		margin-bottom: 5px;
+	}
+
+	&__new{
+		position: relative;
+		margin: 0 10px;
+	}
+
+	&__add{
+		position: absolute;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		width: 30px;
+		text-align: center;
+		color: @c-hover;
+		padding: 6px 5px;
+		box-sizing: border-box;
+	}
+
+	&__link{
+		display: block;
+		color: @c-text;
+		padding: 5px 20px;
+		line-height: 25px;
+		text-decoration: none;
+
+		&:hover{
+			color: @c-white;
+			background: linear-gradient(to bottom, @c-gr-top 0%, @c-gr-bottom 100%);
+		}
+	}
+
+	&__list{
+		max-height: 245px;
+		overflow-y: auto;
+	}
+}

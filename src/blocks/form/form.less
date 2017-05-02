@@ -14,6 +14,11 @@ input{
 	font-weight: 500;
 	font-size: 14px;
 	border: 1px solid @c-border;
+
+	&:focus{
+		border-color: @c-purpur;
+		box-shadow: 0 1px 3px fade(@c-purpur, 38%);
+	}
 }
 
 .input-clear{
@@ -78,6 +83,11 @@ input{
 		background: linear-gradient(to bottom, @c-gr-top 0%, @c-gr-bottom 100%);
 		border: none;
 		color: @c-white;
+
+		&.disabled{
+			opacity: 0.2;
+			cursor: default;
+		}
 	}
 
 	&_border{
@@ -99,7 +109,16 @@ input{
 		}
 	}
 
-	&:hover{
+	&_large{
+		font-size: 16px;
+		text-transform: uppercase;
+		font-weight: 700;
+		padding: 10px 20px;
+		min-width: 200px;
+		text-align: center;
+	}
+
+	&:not(.disabled):hover{
 		color: @c-white;
 		box-shadow: none;
 		background: linear-gradient(to bottom, @c-gr-top-hover 0%, @c-gr-bottom-hover 100%);
@@ -206,6 +225,7 @@ input{
 	&__popup{
 		display: none;
 		position: absolute;
+		z-index: 10;
 		top: 100%;
 		left: 0;
 		right: 0;
@@ -391,6 +411,113 @@ input{
 		&:hover{
 			background: linear-gradient(to bottom, @c-gr-top 0%, @c-gr-bottom 100%);
 			color: @c-white;
+		}
+	}
+}
+
+.ui-autocomplete {
+    background: @c-white;
+    border: 1px solid @c-border;
+    border-radius: 10px;
+    width: 350px;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    &.ui-menu{
+    	.ui-menu-item{
+    		display: block;
+    		padding: 0 15px;
+    		color: @c-grey;
+			
+			div{
+				line-height: 35px;
+    			white-space: nowrap;
+    			overflow: hidden;
+    			text-overflow: ellipsis;
+			}
+
+    		.inp__address{
+    			color: @c-text;
+    		}
+
+    		.inp__specific{
+    			display: none;
+    		}
+
+    		&:hover{
+    			color: @c-white;
+    			cursor: pointer;
+    			background: linear-gradient(to bottom, @c-gr-top 0%, @c-gr-bottom 100%);
+
+    			.inp__address{
+    				color: @c-white;
+    				font-weight: 600;
+    			}
+
+    			.inp__specific{
+    				display: inline;
+    			}
+    		}
+    	}
+    }
+}
+
+.checkbox{
+	input{
+		display: none;
+
+		&:checked + label{
+			color: @c-blue;
+
+			&:before{
+				background: @c-blue;
+				border-color: @c-blue;
+			}
+
+			&:after{
+				display: block;
+			}
+		}
+
+		&[disabled] + label{
+			color: @c-text !important;
+
+			&:before{
+				background: @c-grey !important;
+				border-color: @c-grey !important;
+			}
+		}
+	}
+
+	label{
+		position: relative;
+		cursor: pointer;
+		display: inline-block;
+		padding-left: 25px;
+
+		&:before{
+			content: "";
+			position: absolute;
+			top: 2px;
+			left: 0;
+			width: 18px;
+			height: 18px;
+			box-sizing: border-box;
+			border-radius: 3px;
+			border: 1px solid @c-grey;
+		}
+
+		&:after{
+			content: "";
+			position: absolute;
+			display: none;
+			height: 4px;
+			width: 7px;
+			left: 9px;
+			top: 11px;
+			border-left: 2px solid @c-white;
+			border-bottom: 2px solid @c-white;
+			transform: rotate(-45deg) translate(0, -100%);
 		}
 	}
 }

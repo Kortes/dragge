@@ -1,0 +1,49 @@
+@import "../base/var";
+
+.description{
+	display: flex;
+
+	.tip{
+		margin: 20px 0 0;
+	}
+
+	&__body{
+		width: 500px;
+		margin-right: 20px;
+	}
+
+	&__top{
+		padding: 0 5px;
+	}
+
+	&__info{
+		color: fade(@c-black, 50%);
+		font-size: 12px;
+		line-height: 20px;
+	}
+
+	&__count{
+		font-weight: 600;
+		float:right;
+		color: @c-blue;
+		line-height: 20px;
+	}
+
+	&__wrapper{
+		height: 160px;
+		overflow: hidden;
+		border-radius: 10px;
+		border: 1px solid @c-border;
+	}
+
+	&__text{
+		border: none;
+		background: @c-white;
+		height: 140px;
+		padding: 10px 40px 10px 10px;
+		width: 480px;
+		font-size: 14px;
+		line-height: 20px;
+		resize: none;
+	}
+}

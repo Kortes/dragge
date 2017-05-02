@@ -1,0 +1,103 @@
+@import "../base/var";
+
+.rent{
+	display: flex;
+
+	&__check{
+		margin-right: 50px;
+
+		&_commision{
+			display: none;
+		}
+	}
+
+	&__text{
+		width: 100px;
+		display: inline-block;
+		vertical-align: top;
+		font-size: 12px;
+		color: fade(@c-black, 50%);
+		white-space: normal;
+
+		& + &{
+			margin-left: 10px;
+		}
+
+		&_autosize{
+			width: auto;
+		}
+	}
+
+	&__inner{
+		white-space: nowrap;
+		height: 0;
+		opacity: 0;
+		transition: opacity .2s, height .2s;
+	}
+
+	&__checkbox{
+		display: none;
+
+		&:checked{
+			& + .rent__label{
+				color: @c-blue;
+
+				&:before{
+					background: @c-blue;
+					border-color: @c-blue;
+				}
+
+				&:after{
+					display: block;
+				}
+			}
+
+			& ~ .rent__inner{
+				height: 60px;
+				opacity: 1;
+			}
+		}
+
+		&[disabled] + .rent__label{
+			color: @c-text !important;
+
+			&:before{
+				background: @c-grey !important;
+				border-color: @c-grey !important;
+			}
+		}
+	}
+
+	&__label{
+		font-weight: 500;
+		position: relative;
+		cursor: pointer;
+		display: inline-block;
+		padding: 25px 0 5px;
+
+		&:before{
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 18px;
+			height: 18px;
+			box-sizing: border-box;
+			border-radius: 3px;
+			border: 1px solid @c-grey;
+		}
+
+		&:after{
+			content: "";
+			position: absolute;
+			display: none;
+			height: 4px;
+			width: 7px;
+			left: 9px;
+			top: 9px;
+			border-left: 2px solid @c-white;
+			border-bottom: 2px solid @c-white;
+			transform: rotate(-45deg) translate(0, -100%);
+		}
+	}
+}
