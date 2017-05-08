@@ -186,55 +186,61 @@ $(document).ready(function() {
 		}
 	]
 
-	$(".inp_autocomplite").autocomplete({// https://jqueryui.com/autocomplete/
-      	source: arrowAddress,
-      	minLength: 0
-    }).autocomplete("instance")._renderItem = function( ul, item ) {
-      	return $("<li>")
-	        .append("<div>" + item.type + 
-	        	" <span class='inp__address'>" + 
-	        		item.name + 
-	    		"</span><span class='inp__specific'>, " + item.specific + "</span></div>" )
-	        .appendTo( ul );
-    };
+	if ($(".inp_autocomplite").length > 0){
+
+		$(".inp_autocomplite").autocomplete({// https://jqueryui.com/autocomplete/
+	      	source: arrowAddress,
+	      	minLength: 0
+	    }).autocomplete("instance")._renderItem = function( ul, item ) {
+	      	return $("<li>")
+		        .append("<div>" + item.type + 
+		        	" <span class='inp__address'>" + 
+		        		item.name + 
+		    		"</span><span class='inp__specific'>, " + item.specific + "</span></div>" )
+		        .appendTo( ul );
+	    };
+	}
 
     $(".form-add__address").change(function(){
     	$(".form-add__info").addClass("form-add__info_active");
     });
 
-    $(".dropzone").dropzone({ 
-    	url: "../images/dropzone",
-    	maxFilesize: 1,
-    	maxFiles: 10,
-    	thumbnailWidth: 240,
-    	thumbnailHeight: 160,
-    	previewTemplate: $("#dropzoneTamplate").html()
-    });
+    if ($(".dropzone").length > 0){
 
-    $(".dropzone").on("click", ".room__value", function(e){
-    	e.preventDefault();
-    	var self = $(this);
-    	var parent = self.closest(".room");
-    	self.slideUp(200);
-    	parent.find(".room__body").slideDown(200);
-    });
+	    $(".dropzone").dropzone({ 
+	    	url: "../images/dropzone",
+	    	maxFilesize: 1,
+	    	maxFiles: 10,
+	    	thumbnailWidth: 240,
+	    	thumbnailHeight: 160,
+	    	previewTemplate: $("#dropzoneTamplate").html()
+	    });
 
-    $(".dropzone").on("click", ".room__link", function(e){
-    	e.preventDefault();
-    	var self = $(this);
-    	var parent = self.closest(".room");
-    	parent.find(".room__value").text(self.text()).slideDown(200);
-    	parent.find(".room__body").slideUp(200);
-    });
+	    $(".dropzone").on("click", ".room__value", function(e){
+	    	e.preventDefault();
+	    	var self = $(this);
+	    	var parent = self.closest(".room");
+	    	self.slideUp(200);
+	    	parent.find(".room__body").slideDown(200);
+	    });
 
-    $(".dropzone").on("click", ".room__add", function(e){
-    	e.preventDefault();
-    	var self = $(this);
-    	var parent = self.closest(".room");
-    	var inp = parent.find(".room__input");
-    	parent.find(".room__value").text(inp.val()).slideDown(200);
-    	parent.find(".room__body").slideUp(200);
-    });
+	    $(".dropzone").on("click", ".room__link", function(e){
+	    	e.preventDefault();
+	    	var self = $(this);
+	    	var parent = self.closest(".room");
+	    	parent.find(".room__value").text(self.text()).slideDown(200);
+	    	parent.find(".room__body").slideUp(200);
+	    });
+
+	    $(".dropzone").on("click", ".room__add", function(e){
+	    	e.preventDefault();
+	    	var self = $(this);
+	    	var parent = self.closest(".room");
+	    	var inp = parent.find(".room__input");
+	    	parent.find(".room__value").text(inp.val()).slideDown(200);
+	    	parent.find(".room__body").slideUp(200);
+	    });
+	}
 
     $(".tip__delete").click(function(e){
     	e.preventDefault();
@@ -245,10 +251,12 @@ $(document).ready(function() {
     	$(".description__count").text($(".description__text").val().length);
     }
 
-    descriptionLength();
-    $(".description__text").keyup(function(){
-    	descriptionLength();
-    });
+    if ($(".description__text").length > 0){
+	    descriptionLength();
+	    $(".description__text").keyup(function(){
+	    	descriptionLength();
+	    });
+	}
 
     $("#MyStatus").change(function() {
     	if ($(this).prop("checked")) {
