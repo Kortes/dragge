@@ -1,0 +1,17 @@
+<div class="error">
+	<div class="error__title">{{ error.title }}</div>
+	{% if error.description %}
+		<div class="error__description">{{ error.description }}</div>
+	{% endif %}
+	<div class="error__info {% if error.description %}error__info_bottom{% endif %}">
+		{% if not error.description %}
+			Зато
+		{% endif %}
+		у нас есть <a href="{{ error.link }}">{{ error.count }} вариантов жилья</a>
+		<br>
+		<a href="{{ error.link }}" class="btn btn_gradient error__btn">Найти жилье в аренду</a>
+	</div>
+	{% if error.error %}
+		<div class="error__type">{{ error.error }}</div>
+	{% endif %}
+</div>

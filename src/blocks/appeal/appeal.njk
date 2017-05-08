@@ -1,0 +1,31 @@
+{% set appeal = {
+	"title": "Привет, Друзья!",
+	"text": "<p>Вы находитесь здесь, потому-что оказались на нашем замечательном сайте аренды недвижимости, где большинство объявлений принадлежат непосредственно собственникам.</p><p>Мы проверяем каждое из них, наказываем всяких мудаков, и потому, можем быть уверены в том, что вы действительно найдете прекрасный вариант жилья. Или сдадите свою квартиру хорошим людям.</p><p>Агенты на нашем сайте ведут себя очень хорошо, и чаще всего работают за счет арендатора.</p>",
+	"person": {
+		"name": "Никита Словиковский",
+		"position": "Основатель сервиса «Драже»",
+		"image": "../images/nikita.png"
+	},
+	"link": "https://vk.com/ekb_arenda"
+}%}
+<div class="appeal">
+	<div class="appeal__title">{{ appeal.title }}</div>
+	<div class="appeal__text text">{{ appeal.text }}</div>
+	<div class="appeal__person">
+		<div class="appeal__person-image">
+			<img src="{{ appeal.person.image }}" alt="{{ appeal.person.name }}" class="appeal__person-img" />
+		</div>
+		<div class="appeal__person-info">
+			<div class="appeal__person-name">{{ appeal.person.name }}</div>
+			<div class="appeal__person-position">{{ appeal.person.position }}</div>
+			<a href="{{ appeal.link }}" target="_blank" class="btn btn_border btn_border_hover appeal__btn">
+				<span class="btn__icon">
+					<svg width="26" height="26">
+						<use xlink:href="#icon-vk"></use>
+					</svg>
+				</span>
+				<span class="btn__text">Вступайте в нашу группу</span>
+			</a>
+		</div>
+	</div>
+</div>

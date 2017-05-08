@@ -1,0 +1,17 @@
+{% extends "base/base.njk" %}
+
+{% set error = {
+	"title": "Объявление было&nbsp;удалено",
+	"count": "1285",
+	"link": "/build/",
+	"description": "Удалено модераторами<br>по причине нарушения <a href='#'>правил сервиса</a>"
+}%}
+
+{% block title %}{{ error.title }}{% endblock %}
+
+{% block content %}
+	<div class="page__wrapper error-wrapper clearfix">
+		{% include 'appeal/appeal.njk' %}
+		{% include 'error/error.njk' %}
+	</div>
+{% endblock %}
