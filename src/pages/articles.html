@@ -1,0 +1,20 @@
+{% extends "base/base.njk" %}
+
+{% set page = {
+	"title": "Статьи о недвижимости"
+} %}
+
+{% block title %}{{ page.title }}{% endblock %}
+
+{% block content %}
+	<div class="page__wrapper">
+		<div class="page__title">{{ page.title }}</div>
+		{% include 'article/articles-filter.njk' %}
+		{% include 'article/article-list.njk' %}
+		{% include 'loader/loader.njk' %}
+	</div>
+{% endblock %}
+
+{% block script %}
+	<script src="../vendor/stalactite/jquery.stalactite.min.js" type="text/javascript"></script>
+{% endblock %}

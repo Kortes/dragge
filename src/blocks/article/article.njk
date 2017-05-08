@@ -1,0 +1,29 @@
+<a href="{{ article.link }}" class="article">
+	<span class="article__image">
+		<img src="{{ article.image }}" class="article__img" alt="{{ article.title }}" />
+	</span>
+	<span class="article__body">
+		<span class="article__title">{{ article.title }}</span>
+		<span class="article__text">{{ article.text }}</span>
+		<span class="article__info">
+			<span class="article__date">{{ article.date }}</span>
+			<span class="article__views">
+				{% for view in article.sotial %}
+					<span class="article__view">
+						<svg role="img" class="article__view-image" width="18" height="18">
+							<use xlink:href="#icon-{{ view.type }}"></use>
+						</svg>
+						{% if view.views %}
+							<span class="article__view-count">{{ view.views }}</span>
+						{% endif %}
+					</span>
+				{% endfor %}
+			</span>
+		</span>
+		<span class="article__filters">
+			{% for filters in article.filter %}
+				<span class="article__filters-item">{{ filters }}</span>
+			{% endfor %}
+		</span>
+	</span>
+</a>

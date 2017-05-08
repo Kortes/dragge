@@ -1,0 +1,15 @@
+{% set filter = [
+	{"title": "все статьи", "hash": "all", "active": true},
+	{"title": "депозит", "hash": "deposit"},
+	{"title": "аренда", "hash": "tenancy"},
+	{"title": "советы съемщикам", "hash": "soviet"},
+	{"title": "договор", "hash": "contract"}
+]%}
+
+<ul class="articles-filter">
+	{% for item in filter -%}
+		<li class="articles-filter__item{% if item.active %} articles-filter__item_active {% endif %}">
+			<a href="#{{ item.hash }}" class="articles-filter__link">{{ item.title }}</a>
+		</li>
+	{%- endfor %}
+</ul>

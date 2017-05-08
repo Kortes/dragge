@@ -287,6 +287,14 @@ $(document).ready(function() {
     	inp.val("");
     	parent.removeClass("social__item_active");
     });
+
+    if ($(".article-list__item").length > 0) {
+    	$(".article-list").stalactite({
+			duration: 350,
+			easing: 'swing', 
+			fluid: false
+		});             
+    }
 });
 
 ;( function( window, document )
